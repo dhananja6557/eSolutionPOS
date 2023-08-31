@@ -24,7 +24,7 @@ public class dbConnection {
     public void db_con(String  query, String data) {
         String url = "jdbc:mysql://localhost/esolution_pos";
         String uname = "root";
-        String pword = "test@123";
+        String pword = "test@123"; 
         
         try {
             Class.forName("com.mysql.jdbc.Driver");
