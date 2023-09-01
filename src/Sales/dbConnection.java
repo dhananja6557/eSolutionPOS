@@ -30,11 +30,13 @@ public class dbConnection {
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection(url, uname, pword);
             Statement st = con.createStatement();
-            ResultSet rs = st.executeQuery(query);
-            rs.next();
-            String datas = rs.getString(data);
-            
-            System.out.println(datas);
+            ResultSet nrs = st.executeQuery(query);
+//            rs.next();
+            while(nrs.next()) {
+                String datas = nrs.getString(data);
+                System.out.println(datas);
+            }
+//            String datas = rs.getString(data);
             
             st.close();
             con.close();
@@ -45,4 +47,12 @@ public class dbConnection {
             Logger.getLogger(dbConnection.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    
+    public static void main(String[] args) {
+        dbConnection dbcon = new dbConnection();
+        String db = "SELECT * FROM es_product";
+        dbcon.db_con(db, "product_name");
+//        System.out.println("1");
+    }
 }
+
