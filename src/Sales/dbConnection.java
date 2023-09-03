@@ -31,8 +31,10 @@ public class dbConnection {
 //            Connection con = DriverManager.getConnection(url, uname, pword);
 //            Statement st = con.createStatement();
 //            ResultSet nrs = st.executeQuery(query);
+//            int idx = 1;
 ////            rs.next();
 //            while(nrs.next()) {
+//                System.out.print(idx++ + ". ");
 //                String datas = nrs.getString(data);
 //                System.out.println(datas);
 //            }
@@ -48,39 +50,39 @@ public class dbConnection {
 //        }
 //    }
     
+    public static Connection c;
+    
     static {
-        String url = "jdbc:mysql://localhost/esolution_pos";
-        String uname = "root";
-        String pword = "test@123";         
-        
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            Connection con = DriverManager.getConnection(url, uname, pword);
-            Statement st = con.createStatement();
-            ResultSet nrs = st.executeQuery(" SELECT * FROM es_product");
-//            rs.next();
-//            while(nrs.next()) {
-//                String datas = nrs.getString(data);
-//                System.out.println(datas);
-//            }
-//            String datas = rs.getString(data);
+            String url = "jdbc:mysql://localhost/esolution_pos";
+            String un = "root";
+            String pw = "test@123";
             
-            st.close();
-            con.close();
-            
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(dbConnection.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (SQLException ex) {
-            Logger.getLogger(dbConnection.class.getName()).log(Level.SEVERE, null, ex);
+            c = DriverManager.getConnection(url, un, pw);
+        } catch (Exception e) {
+            e.printStackTrace();
         }
+    }
+    
+    public static void IUD(String query) throws Exception {
+        Statement s = c.createStatement();
+        s.executeUpdate(query);
+    }
+    
+    public static ResultSet SEARCH(String query) throws Exception {
+        Statement s = c.createStatement();
+        ResultSet rs = s.executeQuery(query);
+        
+        return rs;
     }
         
     
-    public static void main(String[] args) {
-        dbConnection dbcon = new dbConnection();
-        String db = "SELECT * FROM es_product";
-//        dbcon.db_con(db, "product_name");
-//        System.out.println("1");
-    }
+//    public static void main(String[] args) {
+//        dbConnection dbcon = new dbConnection();
+//        String db = "SELECT * FROM es_product";
+////        dbcon.db_con(db, "product_name");
+////        System.out.println("1");
+//    }
 }
 

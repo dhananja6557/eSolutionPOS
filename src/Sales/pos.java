@@ -108,7 +108,8 @@ public class pos extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         txtBill = new javax.swing.JTextArea();
-        jLabel10 = new javax.swing.JLabel();
+        lblHeader1 = new javax.swing.JLabel();
+        lblHeader2 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         jMenuItem4 = new javax.swing.JMenuItem();
@@ -401,12 +402,16 @@ public class pos extends javax.swing.JFrame {
             }
         });
 
+        jPanel4.setName(""); // NOI18N
+
         txtBill.setColumns(20);
         txtBill.setFont(new java.awt.Font("Monospaced", 0, 11)); // NOI18N
         txtBill.setRows(5);
         jScrollPane2.setViewportView(txtBill);
 
-        jLabel10.setText("jLabel10");
+        lblHeader1.setText("jLabel10");
+
+        lblHeader2.setText("jLabel10");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -415,15 +420,19 @@ public class pos extends javax.swing.JFrame {
             .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 334, Short.MAX_VALUE)
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblHeader1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblHeader2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addGap(18, 18, 18)
+                .addComponent(lblHeader1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(lblHeader2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 231, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
@@ -590,14 +599,39 @@ public class pos extends javax.swing.JFrame {
     }
     
     public void bill(){
+//        try {
+//            ResultSet rs = dbConnection.SEARCH("SELECT * FROM es_product WHERE id = 'P001'");
+//            while(rs.next()) {
+//                String product_name = rs.getString("product_name");
+//                String idn = rs.getString("id");
+//                
+//                lblHeader.setText(product_name);
+//            }
+//        } catch (Exception ex) {
+//            Logger.getLogger(pos.class.getName()).log(Level.SEVERE, null, ex);
+//        }        
+        
         String total = txtTotal.getText();
         String pay = txtPay.getText();
-        String bal = txtBalance.getText();
+        String bal = txtBalance.getText();        
         
         DefaultTableModel model = new DefaultTableModel();
         
         model = (DefaultTableModel)jTable1.getModel();
         
+//        try {
+//            ResultSet rs = dbConnection.SEARCH("SELECT * FROM es_product");
+//            while(rs.next()) {
+//                String product_name = rs.getString("product_name");
+//                String idn = rs.getString("id");
+//                
+//                txtBill.setText(txtBill.getText() + idn + "\t" + product_name + "\n");
+//            }
+//        } catch (Exception ex) {
+//            Logger.getLogger(pos.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+        lblHeader1.setText("*********************************************\n");
+        lblHeader2.setText("*           eSolution Shop | Bill           *\n");
         txtBill.setText(txtBill.getText() + "*********************************************\n");
         txtBill.setText(txtBill.getText() + "*           eSolution Shop | Bill           *\n");
         txtBill.setText(txtBill.getText() + "*********************************************\n");
@@ -810,7 +844,6 @@ public class pos extends javax.swing.JFrame {
     private javax.swing.JButton btnDelete;
     private javax.swing.JButton btnDelete1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -836,6 +869,8 @@ public class pos extends javax.swing.JFrame {
     private javax.swing.JPopupMenu.Separator jSeparator1;
     private javax.swing.JPopupMenu.Separator jSeparator2;
     private javax.swing.JTable jTable1;
+    private javax.swing.JLabel lblHeader1;
+    private javax.swing.JLabel lblHeader2;
     private javax.swing.JComboBox<String> productList;
     private javax.swing.JTextField txtAmount;
     private javax.swing.JTextField txtBalance;
