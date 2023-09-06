@@ -731,6 +731,7 @@ public class pos extends javax.swing.JFrame {
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
         // TODO add your handling code here:
+        this.dispose();
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void menuNewItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuNewItemActionPerformed
@@ -744,8 +745,6 @@ public class pos extends javax.swing.JFrame {
         txtPay.setText("");
         txtBalance.setText("");
         productList.setSelectedItem(null);
-        
-        instItm.setVisible(true);
         
 //        int data = 0;
 //        txtQty.setValue(Integer.toString(data));
