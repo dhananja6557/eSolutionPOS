@@ -118,6 +118,8 @@ public class pos extends javax.swing.JFrame {
         jScrollPane2 = new javax.swing.JScrollPane();
         txtBill = new javax.swing.JTextArea();
         jLabel10 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
+        jLabel12 = new javax.swing.JLabel();
         jMenuBar1 = new javax.swing.JMenuBar();
         jMenu1 = new javax.swing.JMenu();
         menuNewItem = new javax.swing.JMenuItem();
@@ -436,6 +438,14 @@ public class pos extends javax.swing.JFrame {
         jLabel10.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel10.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Sales/kithsiri_motors_icon.png"))); // NOI18N
 
+        jLabel11.setFont(new java.awt.Font("Calibri", 1, 18)); // NOI18N
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setText("No 47A, Gohagoda Road, Katugastota");
+
+        jLabel12.setFont(new java.awt.Font("Calibri", 1, 12)); // NOI18N
+        jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel12.setText("Contact: 0777110852 / 0812498100");
+
         javax.swing.GroupLayout panelToPrintLayout = new javax.swing.GroupLayout(panelToPrint);
         panelToPrint.setLayout(panelToPrintLayout);
         panelToPrintLayout.setHorizontalGroup(
@@ -443,7 +453,10 @@ public class pos extends javax.swing.JFrame {
             .addComponent(jScrollPane2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 334, Short.MAX_VALUE)
             .addGroup(panelToPrintLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(panelToPrintLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel11, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel12, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         panelToPrintLayout.setVerticalGroup(
@@ -452,8 +465,12 @@ public class pos extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2)
-                .addContainerGap())
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 330, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jLabel11)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel12)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
@@ -491,7 +508,7 @@ public class pos extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 577, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1)
                         .addGap(18, 18, 18)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(btnDelete, javax.swing.GroupLayout.PREFERRED_SIZE, 47, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -661,11 +678,12 @@ public class pos extends javax.swing.JFrame {
 //            Logger.getLogger(pos.class.getName()).log(Level.SEVERE, null, ex);
 //        }
 
-        txtBill.setText(txtBill.getText() + "*********************************************\n");
-        txtBill.setText(txtBill.getText() + "*           eSolution Shop | Bill           *\n");
-        txtBill.setText(txtBill.getText() + "*********************************************\n");
+//        txtBill.setText(txtBill.getText() + "*********************************************\n");
+//        txtBill.setText(txtBill.getText() + "*           eSolution Shop | Bill           *\n");
+//        txtBill.setText(txtBill.getText() + "*********************************************\n");
         
-        txtBill.setText(txtBill.getText() + "Product" + "\t" + "Price" + "\t" + "Amount" + "\n");
+        txtBill.setText(txtBill.getText() + "Product" + "\t \t \t" + "Price" + "\t" + "Amount" + "\n");
+        txtBill.setText(txtBill.getText() + "---------------------------------------------\n");
         
         for (int i = 0; i < model.getRowCount(); i++) {
             String pname = (String)model.getValueAt(i, 1);
@@ -887,6 +905,8 @@ public class pos extends javax.swing.JFrame {
     private javax.swing.JMenuItem insertProduct;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
