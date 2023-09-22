@@ -47,7 +47,7 @@ public class pos extends javax.swing.JFrame {
     
     public void fillCombo(){
         try {
-            con = DriverManager.getConnection("jdbc:mysql://localhost/esolution_pos","root","test@123");
+            con = DriverManager.getConnection("jdbc:mysql://mysql-532bcf9-info-ae4f.aivencloud.com:20149/defaultdb?useSSL=false","avnadmin","AVNS_5n0lAPq6CJnFNq8g5LP");
             String query = "SELECT * FROM es_product";
             Statement st = con.createStatement();
             pst = con.prepareStatement(query);
@@ -603,7 +603,7 @@ public class pos extends javax.swing.JFrame {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
                 
-                con = DriverManager.getConnection("jdbc:mysql://localhost/esolution_pos","root","test@123");
+                con = DriverManager.getConnection("jdbc:mysql://mysql-532bcf9-info-ae4f.aivencloud.com:20149/defaultdb?useSSL=false","avnadmin","AVNS_5n0lAPq6CJnFNq8g5LP");
                 pst = con.prepareStatement("SELECT * FROM es_product WHERE id = ?");
                 
                 pst.setString(1, pcode);
@@ -783,7 +783,7 @@ public class pos extends javax.swing.JFrame {
             try {
                 Class.forName("com.mysql.jdbc.Driver");
                 
-                con = DriverManager.getConnection("jdbc:mysql://localhost/esolution_pos","root","test@123");
+                con = DriverManager.getConnection("jdbc:mysql://mysql-532bcf9-info-ae4f.aivencloud.com:20149/defaultdb?useSSL=false","avnadmin","AVNS_5n0lAPq6CJnFNq8g5LP");
                 pst = con.prepareStatement("SELECT * FROM es_product WHERE product_name = ?");
                 
                 pst.setString(1, pcode);

@@ -159,12 +159,14 @@ public class insertItem extends javax.swing.JFrame {
         String unitPrice = pdUnitPrice.getText();
         String product = pdName.getText();
         
-        String query = "INSERT INTO es_product (`id`, `product_name`, `price`) VALUES (" + id + ", " + product + ", " + unitPrice + ")";
+        String query = "INSERT INTO es_product (`id`, `product_name`, `price`) VALUES ('" + id + "', '" + product + "', '" + unitPrice + "')";
         try {
             dbConnection.IUD(query);
         } catch (Exception ex) {
             Logger.getLogger(insertItem.class.getName()).log(Level.SEVERE, null, ex);
         }
+        
+        this.dispose();
     }//GEN-LAST:event_btnAddActionPerformed
 
     /**

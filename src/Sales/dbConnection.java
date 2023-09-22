@@ -55,9 +55,9 @@ public class dbConnection {
     static {
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            String url = "jdbc:mysql://localhost/esolution_pos";
-            String un = "root";
-            String pw = "test@123";
+            String url = "jdbc:mysql://mysql-532bcf9-info-ae4f.aivencloud.com:20149/defaultdb?useSSL=false";
+            String un = "avnadmin";
+            String pw = "AVNS_5n0lAPq6CJnFNq8g5LP";
             
             c = DriverManager.getConnection(url, un, pw);
         } catch (Exception e) {
