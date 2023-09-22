@@ -64,7 +64,7 @@
                           <Component id="jLabel6" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="lnkES" min="-2" pref="248" max="-2" attributes="0"/>
-                          <EmptySpace min="-2" pref="139" max="-2" attributes="0"/>
+                          <EmptySpace min="-2" pref="151" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -113,7 +113,7 @@
               <Font name="Calibri" size="24" style="1"/>
             </Property>
             <Property name="horizontalAlignment" type="int" value="0"/>
-            <Property name="text" type="java.lang.String" value="eSolution Edu Lanka Pvt. Ltd."/>
+            <Property name="text" type="java.lang.String" value="eSolution Workbench (PVT) Ltd."/>
             <Property name="horizontalTextPosition" type="int" value="0"/>
           </Properties>
         </Component>

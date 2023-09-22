@@ -19,7 +19,7 @@ public class AboutUs extends javax.swing.JFrame {
         
         initComponents();
         
-        lnkES.setText("<html><a href='https://esolution.edu.lk'>Visit for eSolution Free Web Service</a></html>");
+//        lnkES.setText("<html><a href='https://esolution.edu.lk'>Visit for eSolution Free Web Service</a></html>");
     }
     
     /**
@@ -50,7 +50,7 @@ public class AboutUs extends javax.swing.JFrame {
 
         jLabel1.setFont(new java.awt.Font("Calibri", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("eSolution Edu Lanka Pvt. Ltd.");
+        jLabel1.setText("eSolution Workbench (PVT) Ltd.");
         jLabel1.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
 
         jLabel3.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
@@ -107,7 +107,7 @@ public class AboutUs extends javax.swing.JFrame {
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lnkES, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(139, 139, 139)))
+                        .addGap(151, 151, 151)))
                 .addContainerGap())
             .addGroup(pnlTestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(pnlTestLayout.createSequentialGroup()
