@@ -6,6 +6,7 @@ package Sales;
 
 import java.awt.Graphics;
 import java.awt.Graphics2D;
+import java.awt.Image;
 import java.awt.event.KeyEvent; 
 import java.awt.print.PageFormat;
 import java.awt.print.Printable;
@@ -19,6 +20,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.UIManager;
@@ -36,6 +38,9 @@ public class pos extends javax.swing.JFrame {
     public pos() {
         initComponents();
         fillCombo();
+        
+        Image img = new ImageIcon(this.getClass().getResource("/Sales/es_logo.png")).getImage();
+        this.setIconImage(img);
     }
     
     AboutUs aboutUsFrame = new AboutUs();
@@ -136,6 +141,7 @@ public class pos extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("eSolution POS System");
+        setIconImages(null);
 
         jPanel2.setBackground(new java.awt.Color(51, 51, 51));
 

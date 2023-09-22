@@ -75,7 +75,7 @@ public class AboutUs extends javax.swing.JFrame {
 
         lnkES.setFont(new java.awt.Font("Calibri", 1, 14)); // NOI18N
         lnkES.setHorizontalAlignment(javax.swing.SwingConstants.LEFT);
-        lnkES.setText("***********************");
+        lnkES.setText("www.esolution.web.lk");
         lnkES.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         lnkES.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -107,7 +107,7 @@ public class AboutUs extends javax.swing.JFrame {
                         .addComponent(jLabel6)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lnkES, javax.swing.GroupLayout.PREFERRED_SIZE, 248, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(187, 187, 187)))
+                        .addGap(139, 139, 139)))
                 .addContainerGap())
             .addGroup(pnlTestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(pnlTestLayout.createSequentialGroup()

@@ -5,9 +5,11 @@
 package Sales;
 
 import java.awt.Dimension;
+import java.awt.Image;
 import java.awt.Toolkit;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -23,6 +25,9 @@ public class insertItem extends javax.swing.JFrame {
         Toolkit toolkit = getToolkit();
         Dimension size = toolkit.getScreenSize();
         setLocation(size.width/2 - getWidth()/2, size.height/2 - getHeight()/2);
+        
+        Image img = new ImageIcon(this.getClass().getResource("/Sales/es_logo.png")).getImage();
+        this.setIconImage(img);
     }
 
     /**
