@@ -19,7 +19,7 @@ public class AboutUs extends javax.swing.JFrame {
         
         initComponents();
         
-//        lnkES.setText("<html><a href='https://esolution.edu.lk'>Visit for eSolution Free Web Service</a></html>");
+//        lnkES.setText("<html><a href='https://esolution.web.lk'>Visit for eSolution Free Web Service</a></html>");
     }
     
     /**
