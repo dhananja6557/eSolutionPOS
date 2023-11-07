@@ -6,6 +6,9 @@ package Sales;
 
 import static Sales.dbConnection.IUD;
 import static Sales.dbConnection.c;
+import java.awt.Dimension;
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.KeyEvent;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -16,6 +19,7 @@ import java.sql.Statement;
 import java.util.Vector;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -33,22 +37,12 @@ public class InsertData extends javax.swing.JFrame {
         
         tbl_load();
         
-//        DefaultTableModel model = new DefaultTableModel();
-//        
-//        model = (DefaultTableModel)jTable1.getModel();
-//        
-//        model.addRow(new Object[]
-//        {
-//            txtProductID.getText(),
-//            txtProduct.getText(),
-//            txtPrice.getText()
-//        });
+        Toolkit toolkit = getToolkit();
+        Dimension size = toolkit.getScreenSize();
+        setLocation(size.width/2 - getWidth()/2, size.height/2 - getHeight()/2);
         
-//        int sum = 0;
-//        
-//        for (int i = 0; i < jTable1.getRowCount(); i++) {
-//            sum = sum + Integer.parseInt(jTable1.getValueAt(i, 4).toString());
-//        }
+        Image img = new ImageIcon(this.getClass().getResource("/Sales/es_logo.png")).getImage();
+        this.setIconImage(img);
     }
     
     Connection con;
@@ -109,6 +103,7 @@ public class InsertData extends javax.swing.JFrame {
         btnUpdate = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Add | Delete | Update Product");
 
         jPanel1.setBackground(new java.awt.Color(51, 51, 51));
 
@@ -168,6 +163,7 @@ public class InsertData extends javax.swing.JFrame {
         jLabel11.setText("Price");
 
         btnDelete.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnDelete.setForeground(new java.awt.Color(255, 0, 0));
         btnDelete.setText("Delete");
         btnDelete.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -176,6 +172,7 @@ public class InsertData extends javax.swing.JFrame {
         });
 
         btnUpdate.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnUpdate.setForeground(new java.awt.Color(0, 255, 51));
         btnUpdate.setText("Update");
         btnUpdate.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -282,21 +279,28 @@ public class InsertData extends javax.swing.JFrame {
             }
         }
         tbl_load();
+        txtProductID.setText("");
+        txtProduct.setText("");
+        txtPrice.setText("");
     }//GEN-LAST:event_btnAddActionPerformed
 
     private void btnDeleteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnDeleteActionPerformed
-        if(txtProductID.getText().equals("") || txtProduct.getText().equals("") || txtPrice.getText().equals("")) {
+        if(txtProductID.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Product ID fieled is required!");            
         }else {
             String pid = txtProductID.getText();
             
-            String query = "DELETE * FROM es_product WHERE `id`='"+pid+"' LIMIT 1";
+            String query = "DELETE FROM es_product WHERE `id`='"+pid+"' LIMIT 1";
             
             try {
                 dbConnection.IUD(query);
             } catch (Exception ex) {
                 Logger.getLogger(InsertData.class.getName()).log(Level.SEVERE, null, ex);
             }
+            
+            txtProductID.setText("");
+            txtProduct.setText("");
+            txtPrice.setText("");
         }
         tbl_load();
     }//GEN-LAST:event_btnDeleteActionPerformed
@@ -318,6 +322,9 @@ public class InsertData extends javax.swing.JFrame {
             }
         }
         tbl_load();
+        txtProductID.setText("");
+        txtProduct.setText("");
+        txtPrice.setText("");
     }//GEN-LAST:event_btnUpdateActionPerformed
 
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked

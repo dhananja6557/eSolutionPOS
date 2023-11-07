@@ -44,7 +44,7 @@ public class pos extends javax.swing.JFrame {
     }
     
     AboutUs aboutUsFrame = new AboutUs();
-    insertItem instItem = new insertItem();
+    InsertData instItem = new InsertData();
     
     Connection con;
     PreparedStatement pst;
